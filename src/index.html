@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wurmie3D</title>
+    <style>
+        body { margin: 0; }
+        #startScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            z-index: 10;
+        }
+        #gameOverScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            z-index: 20;
+            display: none;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0026b3;
+        }
+        button:disabled {
+            background-color: rgb(85, 83, 83);
+            color: white;
+            cursor: not-allowed;
+        }
+        #countdown {
+            font-size: 3em;
+            margin-top: 20px;
+            color: #FFFFFF;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="startScreen">
+        <h1>Choose Your Color</h1>
+        <input type="text" id="colorInput" placeholder="#FFFFFF">
+        <button id="startGameButton" disabled>Start Game</button>
+        <div id="countdown"></div>
+    </div>
+    <div id="gameOverScreen">
+        <h1>Game Over</h1>
+        <div id="winnerText"></div>
+    </div>
+    <script src="./scripts.js" type="module"></script>
+</body>
+</html>
