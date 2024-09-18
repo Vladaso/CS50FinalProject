@@ -80,6 +80,10 @@ You should also manually kill Nginx.
 
 - **Description**: Contains all of the used constants, if you find the game boring you can fiddle a bit with these :D.
 
+### `player.js`
+
+- **Description**: Very important player object, creates the playerMesh, playerCamera and sets the playerColor. Used in server.js and scripts.js.
+
 ### `scripts.js`
 
 - **Description**: Main javascript file served to the client contains almost all of the neccessary logic for playing the game, since it's such a big file I will describe some functions in more detail.
