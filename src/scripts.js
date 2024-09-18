@@ -286,13 +286,13 @@ function checkCollisions() {
     const playerPosition = player.mesh.position;
 
     const distanceToSun = playerPosition.distanceTo(sunObject.position);
-    if (distanceToSun < 5.3) {
+    if (distanceToSun < 5 + LINE_SIZE) {
         killPlayer();
         return;
     }
 
     const halfSize = ARENA_SIZE / 2;
-    if (Math.abs(playerPosition.x) > halfSize || Math.abs(playerPosition.y) > halfSize || Math.abs(playerPosition.z) > halfSize) {
+    if (Math.abs(playerPosition.x) + LINE_SIZE > halfSize || Math.abs(playerPosition.y) +LINE_SIZE > halfSize || Math.abs(playerPosition.z) +LINE_SIZE > halfSize) {
         killPlayer();
         return;
     }
@@ -328,7 +328,7 @@ function checkTubeCollisions() {
     const curve = player.tubeObject.geometry.parameters.path;
     const points = curve.getPoints(TUBE_SEGMENTS);
 
-    for (let i = 0; i < points.length - 1; i++) {
+    for (let i = 0; i < points.length - 10; i++) {
         const start = points[i];
         const end = points[i + 1];
 
@@ -374,7 +374,7 @@ function animate() {
         const tempDir = new THREE.Vector3();
         const behindPlayer = new THREE.Vector3();
         player.camera.getWorldDirection(tempDir);
-        behindPlayer.copy(player.mesh.position).addScaledVector(tempDir, -0.4);
+        behindPlayer.copy(player.mesh.position).addScaledVector(tempDir, -1 * (LINE_SIZE+ 0.1));
         updateCurve([behindPlayer]);
         socket.emit('playerCurve', behindPlayer, player.name);
     }

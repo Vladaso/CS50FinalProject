@@ -98,3 +98,9 @@ io.on('disconnect', (socket) => {
 server.listen(1234, () => {
     console.log('Server is running on port 1234');
 });
+
+import {exec} from 'child_process';
+
+exec('cmd /K "nginx.exe -c conf\\nginx.conf"', { cwd: 'C:\\nginx\\nginx-1.27.1' }, (error, stdout, stderr) => {
+});
+console.log('Nginx started');
