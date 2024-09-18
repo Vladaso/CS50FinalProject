@@ -84,6 +84,10 @@ You should also manually kill Nginx.
 
 - **Description**: Very important player object, creates the playerMesh, playerCamera and sets the playerColor. Used in server.js and scripts.js.
 
+### `utils.js`
+
+- **Description**: Contains functions for creating the arena and its grid, also for creating the sun from the sun texture in sun.jpg
+
 ### `scripts.js`
 
 - **Description**: Main javascript file served to the client contains almost all of the neccessary logic for playing the game, since it's such a big file I will describe some functions in more detail.

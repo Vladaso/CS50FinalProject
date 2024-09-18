@@ -1,4 +1,4 @@
-export const ARENA_SIZE = 40;
+export const ARENA_SIZE = 30;
 export const FPS = 120;
 export const PLAYER_SPEED = FPS/(FPS*15);
 export const ROTATION_SPEED = PLAYER_SPEED/5;
